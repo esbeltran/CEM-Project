@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,jsx,ts,tsx,jpg}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        // "logo": url('./assets/placeholder-icon.jpg'),
+      }
+    },
   },
   plugins: [],
 }
