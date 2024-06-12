@@ -2,43 +2,44 @@
 
 function Navbar() {
   return (
-    <nav className=' bg-red-200 h-1/6 content-center  px-8'>
-      <div className="flex flex-wrap space-x-4 content-evenly">
-        <div className='flex flex-col md:flex-row md:space-x-5 bg-imag'>
-          {/* div for right side icon */}
-            <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="assets/placeholder-icon.jpg" className="h-10" alt="Flowbite Logo" /> 
+    <nav className='h-1/5 content-center m-8'>
+      <div className="flex flex-wrap flex-row space-x-4 content-evenly h-full items-center">
+        {/* div for right side icon */}
+        <button className="h-full w-1/5">
+          <a href="https://flowbite.com/" />
           {/* I'll figure you out later */}
-      </a>
-        </div>
+          <img src="/src/assets/react.svg" className="h-full w-full" alt="Flowbite Logo" /> 
+        </button>
+
+        {/* middle thingies*/}
         <div className=' flex flex-1 justify-center py-1'>
-           {/* div for middle buttons icons */}
-           <ul className="flex flex-row justify-around space-x-5 flex-1 text-2xl">
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Inventory</a>
-            </li>
-            <li>
-              <a href="#">Supplier</a>
-            </li>
-            <li>
-              <a href="#">Buyer</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
+          <ul className="flex flex-row justify-around flex-1 text-xl ">
+            {/* div for middle buttons icons */}
+            {
+              [
+                ['Home', '#Home'],
+                ['Inventory', '#Inventory'],
+                ['Supplier', '#Supplier'],
+                ['Buyer', '#Buyer'],
+                ['About', '#About']
+              ].map(([wack, link]) => (
+                <li>
+                <a href={link}>{wack}</a>
+              </li>
+              ))
+            }
           </ul>
         </div>
+
+        {/* LOGIN AND SIGN UP BUTTONS */}
         <div className="flex flex-col md:flex-row md:space-x-5" >
          {/* div for login/signup buttrons */}
-          <button className='bg-white rounded-lg px-5 py-2.5 text-green-700 border border-green-700 hover:bg-slate-200'>
+          <a href="#logIn" className='button bg-white text-plant border border-plant hover:bg-slate-200'>
             <span>Log In</span>
-          </button>
-          <button className='bg-green-700 rounded-lg px-5 py-2.5 text-white border border-none hover:bg-green-800'>
+          </a>
+          <a href="#SignUp" className='button bg-plant text-white border border-none hover:bg-green-800'>
             <span>Sign Up</span>
-          </button>
+          </a>
         </div>
       </div>
       </nav>
