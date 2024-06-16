@@ -24,7 +24,7 @@ function Footer() {
                       ['twitter', 'twitter_site'],
                       ['youtube', 'youtube_channel']
                     ].map(([filename, link]) => (
-                      <li>
+                      <li key={filename}>
                         <button>
                       <img src={'/src/assets/'+filename+'.svg'} className="button-icon" alt={filename+'image'}/>
                       <a href={link}/>

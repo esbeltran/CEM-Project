@@ -1,12 +1,20 @@
 // import { useState } from "react";
 
+import { useNavigate } from "react-router-dom"
+
 function Navbar() {
+  let navigate = useNavigate();
+  const loginroute = ()=>{
+    navigate("/login");
+  }
+  const signuproute = () => {
+    navigate("/signup");
+  }
   return (
     <nav className='h-1/5 content-center m-8'>
       <div className="flex flex-wrap flex-row space-x-4 content-evenly h-full items-center">
         {/* div for right side icon */}
         <button className="h-full w-1/5">
-          <a href="https://flowbite.com/" />
           {/* I'll figure you out later */}
           <img src="/src/assets/react.svg" className="h-full w-full" alt="Flowbite Logo" /> 
         </button>
@@ -18,13 +26,13 @@ function Navbar() {
             {
               [
                 ['Home', '#Home'],
-                ['Inventory', '#Inventory'],
+                ['Inventory', '/inventory'],
                 ['Supplier', '#Supplier'],
                 ['Buyer', '#Buyer'],
                 ['About', '#About']
               ].map(([wack, link]) => (
-                <li>
-                <a href={link}>{wack}</a>
+                <li key={wack} onClick={()=>navigate(link)}>
+                {wack}
               </li>
               ))
             }
@@ -34,12 +42,12 @@ function Navbar() {
         {/* LOGIN AND SIGN UP BUTTONS */}
         <div className="flex flex-col md:flex-row md:space-x-5" >
          {/* div for login/signup buttrons */}
-          <a href="#logIn" className='button bg-white text-plant border border-plant hover:bg-slate-200'>
+          <button onClick={()=> loginroute()} className='button bg-white text-plant border border-plant hover:bg-slate-200'>
             <span>Log In</span>
-          </a>
-          <a href="#SignUp" className='button bg-plant text-white border border-none hover:bg-green-800'>
+          </button>
+          <button onClick={()=> signuproute()} className='button bg-plant text-white border border-none hover:bg-green-800'>
             <span>Sign Up</span>
-          </a>
+          </button>
         </div>
       </div>
       </nav>
