@@ -1,13 +1,19 @@
 import express from "express";
 import cors from "cors";
-import records from "./routes/record.js";
+import dotenv from "dotenv";
+import routes from "./routes/index.js";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
 
+dotenv.config();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
-app.use("/record", records);
+
+// Routes
+app.use("/api", routes);
 
 // start the Express server
 app.listen(PORT, () => {
