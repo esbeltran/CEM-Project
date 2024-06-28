@@ -1,12 +1,12 @@
 import VerticalNavbar from "../components/VerticalNav"
 
-function PriceMonitoring() {
+function Suppliers() {
     return (
         <div className='w-screen h-screen flex bg-blue-100 flex-row space-y-8 overflow-y-auto'>
             <VerticalNavbar />
-            Price monitoring page
+            Suppliers page
         </div>
     )
 }
 
-export default PriceMonitoring
+export default Suppliers

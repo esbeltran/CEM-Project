@@ -25,10 +25,10 @@ function Navbar() {
             {/* div for middle buttons icons */}
             {
               [
-                ['Home', '#Home'],
+                ['Home', '/'],
                 ['Inventory', '/inventory'],
-                ['Supplier', '#Supplier'],
-                ['Buyer', '#Buyer'],
+                ['Supplier', '/suppliers'],
+                ['Buyer', '/buyer'],
                 ['About', '#About']
               ].map(([wack, link]) => (
                 <li key={wack} onClick={()=>navigate(link)}>
