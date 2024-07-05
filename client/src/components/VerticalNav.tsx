@@ -1,7 +1,18 @@
+import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
-function VerticalNavbar() {
+type NavbarProps = {
+    setAuth: (bool: boolean) => void
+}
+
+function VerticalNavbar({setAuth} : NavbarProps) {
     let navigate = useNavigate();
+    
+    const logout = (e: MouseEvent) => {
+        e.preventDefault();
+        localStorage.removeItem("token");
+        setAuth(false);
+    }
 
     return(
         <nav className="flex flex-col w-1/5 space-y-3 h-full bg-green-300 content-start p-5">
@@ -51,7 +62,7 @@ function VerticalNavbar() {
                             "/"
                     ]
                 ].map(([label, icon, link]) => (
-                    <button className="flex flex-row space-x-2" onClick={()=>navigate(link)}>
+                    <button className="flex flex-row space-x-2" /*onClick={()=>navigate(link)}*/>
                         {icon}
                         <p>{label}</p>
                     </button>
@@ -70,7 +81,7 @@ function VerticalNavbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
                 </svg>
 
-                    <p>Log Out</p>
+                    <p onClick={logout}>Log Out</p>
                 </button>
                 
             </div>

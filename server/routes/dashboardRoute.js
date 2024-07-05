@@ -11,7 +11,7 @@ router.get("/", auth, async (req, res) => {
       [req.user]
     );
 
-    req.json(user.rows[0]);
+    res.json(user.rows[0]);
   } catch (err) {
     console.error(err.message);
     res.status(500).json("Server error");
