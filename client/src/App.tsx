@@ -15,6 +15,9 @@ import ManageAccounting from './pages/ManageAccounting.tsx';
 import Suppliers from './pages/Suppliers.tsx';
 import PriceMonitoring from './pages/PriceMonitoring.tsx';
 import Settings from './pages/Settings.tsx';
+import Inventory from './pages/navigation/Inventory.tsx';
+import Buyer from './pages/navigation/Buyer.tsx';
+import Suppliers from './pages/navigation/Suppliers.tsx';
 
 // https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-appx 
 // https://www.webrecto.com/react/navigate-to-another-page-on-button-click-in-react
