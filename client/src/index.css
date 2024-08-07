@@ -14,6 +14,13 @@
         height: 1.75rem;
     }
 
+    .home-screen {
+        width: 100dvw;
+        height: 100dvh;
+        display: flex;
+        overflow-y: auto;
+    }
+
     .title{
         --tw-text-opacity: 1;
         color: rgb(54 119 28 / var(--tw-text-opacity));
@@ -32,5 +39,17 @@
         display: block;
         font-size: 0.875rem/* 14px */;
         line-height: 1.25rem/* 20px */;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    background-color: lightgray;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: gray;
+        border-radius: 2rem;
     }
 }

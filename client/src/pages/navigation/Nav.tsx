@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
+import SearchBar from "../../components/SearchBar";
 
 function VerticalNavbar() {
     let navigate = useNavigate();
@@ -24,34 +25,34 @@ function VerticalNavbar() {
                     [
                         "Inventory",
                         <img src='/src/assets/trolley.svg' className="button-icon" alt="Inventory icon"/>,
-                        "/inventory"
+                        "inventory"
                     ],
                     [
                         "Price Monitoring", <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                             </svg>,
-                            "/monitoring"
+                            "monitoring"
                     ],
                     [
                         "Suppliers",
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                             </svg>,
-                            "/suppliers"
+                            "suppliers"
                     ],
                     [
                         "Buyer",
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                             </svg>,
-                            "/buyer"
+                            "buyer"
                     ],
                     [
                         "Manage & Accounting",
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />
                             </svg>,
-                            "/manageaccounting"
+                            "manageaccounting"
                     ]
                 ].map(([label, icon, link]) => (
                     <button className="flex flex-row space-x-2" onClick={()=>navigate(link)}>
@@ -80,4 +81,14 @@ function VerticalNavbar() {
     )
 }
 
-export default VerticalNavbar;
+export default function Nav() {
+    return(
+        <div className="home-screen flex-row">
+            <VerticalNavbar />
+            <div className="flex grow flex-col w-4/5 bg-blue-300 items-center py-8">
+                <SearchBar />
+                <Outlet />
+            </div>
+        </div>
+    )
+}

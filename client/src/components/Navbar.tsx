@@ -26,9 +26,9 @@ function Navbar() {
             {
               [
                 ['Home', '/'],
-                ['Inventory', '/inventory'],
-                ['Supplier', '/suppliers'],
-                ['Buyer', '/buyer'],
+                ['Inventory', 'navigate/inventory'],
+                ['Supplier', 'navigate/suppliers'],
+                ['Buyer', 'navigate/buyer'],
                 ['About', '#About']
               ].map(([wack, link]) => (
                 <li key={wack} onClick={()=>navigate(link)}>
