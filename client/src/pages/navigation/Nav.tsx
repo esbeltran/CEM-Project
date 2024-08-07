@@ -85,7 +85,7 @@ export default function Nav() {
     return(
         <div className="home-screen flex-row">
             <VerticalNavbar />
-            <div className="flex grow flex-col w-4/5 bg-blue-300 items-center py-8">
+            <div className="flex grow flex-col w-4/5 items-center py-8">
                 <SearchBar />
                 <Outlet />
             </div>
