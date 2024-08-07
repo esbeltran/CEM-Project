@@ -9,12 +9,12 @@ import {
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import SignUp from './pages/SignUp.tsx';
-import Inventory from './pages/Inventory.tsx';
-import Buyer from './pages/Buyer.tsx';
-import ManageAccounting from './pages/ManageAccounting.tsx';
-import Suppliers from './pages/Suppliers.tsx';
-import PriceMonitoring from './pages/PriceMonitoring.tsx';
+import ManageAccounting from './pages/navigation/ManageAccounting.tsx';
+import PriceMonitoring from './pages/navigation/PriceMonitoring.tsx';
 import Settings from './pages/Settings.tsx';
+import Inventory from './pages/navigation/Inventory.tsx';
+import Buyer from './pages/navigation/Buyer.tsx';
+import Suppliers from './pages/navigation/Suppliers.tsx';
 
 // https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-appx 
 // https://www.webrecto.com/react/navigate-to-another-page-on-button-click-in-react
