@@ -11,20 +11,47 @@ import Inventory from './pages/Inventory.tsx';
 import { useEffect, useState } from 'react';
 import { AuthService } from './services/auth.service.ts';
 import Buyer from './pages/Buyer.tsx';
-import ManageAccounting from './pages/ManageAccounting.tsx';
+import ManageAccounting from './pages/navigation/ManageAccounting.js';';
 import Suppliers from './pages/Suppliers.tsx';
-import PriceMonitoring from './pages/PriceMonitoring.tsx';
+import PriceMonitoring from './pages/navigation/PriceMonitoring.tsx';
 import Settings from './pages/Settings.tsx';
 import Inventory from './pages/navigation/Inventory.tsx';
 import Buyer from './pages/navigation/Buyer.tsx';
 import Suppliers from './pages/navigation/Suppliers.tsx';
+import Nav from './pages/navigation/Nav.tsx';
 
 // https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-appx 
 // https://www.webrecto.com/react/navigate-to-another-page-on-button-click-in-react
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+  },
+  {
+    path: 'navigate',
+    element: <Nav />,
+    children: [
+      {
+        path: 'inventory',
+        element: <Inventory />
+      },
+      {
+        path: 'buyer',
+        element: <Buyer />
+      },
+      {
+        path: 'manageaccounting',
+        element: <ManageAccounting />
+      },
+      {
+        path: 'suppliers',
+        element: <Suppliers />
+      },
+      {
+        path: 'monitoring',
+        element: <PriceMonitoring />
+      },
+    ]
   },
   {
     path: '/login',
@@ -33,26 +60,6 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <SignUp />
-  },
-  {
-    path: '/inventory',
-    element: <Inventory />
-  },
-  {
-    path: '/buyer',
-    element: <Buyer />
-  },
-  {
-    path: '/manageaccounting',
-    element: <ManageAccounting />
-  },
-  {
-    path: '/suppliers',
-    element: <Suppliers />
-  },
-  {
-    path: '/monitoring',
-    element: <PriceMonitoring />
   },
   {
     path: '/settings',
