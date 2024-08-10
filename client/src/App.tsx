@@ -16,6 +16,21 @@ import Inventory from './pages/navigation/Inventory.tsx';
 import Buyer from './pages/navigation/Buyer.tsx';
 import Suppliers from './pages/navigation/Suppliers.tsx';
 import Nav from './pages/navigation/Nav.tsx';
+import { ThemeProvider } from '@emotion/react';
+import { createTheme } from '@mui/material';
+
+
+const theme = createTheme({
+  palette: {
+      primary: {
+          main: '#E3D026',
+          light: '#E9DB5D',
+          dark: '#A29415',
+          contrastText: '#242105',
+      }
+  }
+})
+
 
 // https://www.dhiwise.com/post/the-power-of-createbrowserrouter-optimizing-your-react-appx 
 // https://www.webrecto.com/react/navigate-to-another-page-on-button-click-in-react
@@ -65,7 +80,7 @@ const router = createBrowserRouter([
   // will need notfound page
 ]);
 function App() {
-    return <RouterProvider router={router} />;
+    return <ThemeProvider theme={theme}><RouterProvider router={router} /></ThemeProvider>;
 }
 
 export default App
