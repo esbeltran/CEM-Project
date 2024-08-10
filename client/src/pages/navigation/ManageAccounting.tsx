@@ -5,7 +5,7 @@ import VeggieStats from "../../components/manageaccounting/VegetableStats"
 function ManageAccounting() {
     const veggies = ["Ampalaya", "Papaya", "Sitaw", "Kalabasa"];
     return (
-        <div className='flex grow flex-col w-full'>
+        <div className='nav-outlet'>
             <div className='flex flex-col flex-auto items-center p-8 justify-start space-y-16'>
             {/*  */}
             <div className="flex flex-row w-5/6 h-2/3 space-x-2">
